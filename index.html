@@ -237,10 +237,17 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
     <script>
-        // Inicializar iconos de Lucide
-        lucide.createIcons();
+        // Inicializar iconos de Lucide cuando se cargue la página
+        window.addEventListener('load', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+                console.log('Iconos de Lucide inicializados');
+            } else {
+                console.error('Lucide no está cargado');
+            }
+        });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
