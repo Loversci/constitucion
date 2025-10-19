@@ -60,6 +60,43 @@ body {
 
 .header-content {
     padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Logo Universidad */
+.university-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.university-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+    max-width: 300px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
 }
 
 .header-title {
@@ -537,6 +574,15 @@ section {
         width: 2rem;
         height: 2rem;
     }
+    
+    .logo-img {
+        height: 80px;
+        max-width: 250px;
+    }
+    
+    .university-logo {
+        padding: 0.75rem;
+    }
 
     .section-title {
         font-size: 1.5rem;
@@ -561,6 +607,15 @@ section {
 
     .header-text h1 {
         font-size: 1.5rem;
+    }
+    
+    .logo-img {
+        height: 60px;
+        max-width: 200px;
+    }
+    
+    .university-logo {
+        padding: 0.5rem;
     }
 
     .timeline-item {
