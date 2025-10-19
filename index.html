@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constitución Política de Nicaragua - Infografía Interactiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <!-- Logo Universidad -->
+                <div class="university-logo">
+                    <img src="Logo-CSM.svg" alt="Logo Universidad" class="logo-img">
+                </div>
+                
+                <div class="header-title">
+                    <i data-lucide="book-open" class="header-icon"></i>
+                    <div class="header-text">
+                        <h1>Constitución Política de Nicaragua</h1>
+                        <p>República de Nicaragua - Ley Suprema de la Nación</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Datos Básicos -->
+        <section class="basic-data">
+            <div class="card-grid">
+                <div class="info-card card-blue">
+                    <i data-lucide="globe" class="card-icon"></i>
+                    <h3>País</h3>
+                    <p>República de Nicaragua</p>
+                </div>
+                <div class="info-card card-purple">
+                    <i data-lucide="scale" class="card-icon"></i>
+                    <h3>Naturaleza Jurídica</h3>
+                    <p>Norma Suprema - Art. 182</p>
+                </div>
+                <div class="info-card card-green">
+                    <i data-lucide="flag" class="card-icon"></i>
+                    <h3>Última Reforma</h3>
+                    <p>Febrero 2025 - Ley N°. 1234</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valores Fundamentales -->
+        <section class="fundamental-values">
+            <h2 class="section-title">Valores Fundacionales</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon bg-blue">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h3 class="value-title text-blue">Valores Cristianos</h3>
+                    <p>Amor al prójimo, reconciliación, respeto e igualdad</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon bg-red">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="value-title text-red">Ideales Socialistas</h3>
+                    <p>Bien común, sociedad incluyente, justa y equitativa</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon bg-green">
+                        <i data-lucide="home"></i>
+                    </div>
+                    <h3 class="value-title text-green">Prácticas Solidarias</h3>
+                    <p>Modelo de vida comunitario y fraterno</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secciones Principales -->
+        <section class="main-sections">
+            <h2 class="section-title">Estructura Constitucional</h2>
+            <div class="sections-grid">
+                <!-- Principios Fundamentales -->
+                <div class="section-card card-blue-gradient" data-section="principios">
+                    <div class="section-header">
+                        <i data-lucide="flag" class="section-icon"></i>
+                        <i data-lucide="chevron-right" class="chevron"></i>
+                    </div>
+                    <h3>Principios Fundamentales</h3>
+                    <p>Fundamentos del Estado nicaragüense</p>
+                </div>
+
+                <!-- Derechos Políticos -->
+                <div class="section-card card-purple-gradient" data-section="politicos">
+                    <div class="section-header">
+                        <i data-lucide="users" class="section-icon"></i>
+                        <i data-lucide="chevron-right" class="chevron"></i>
+                    </div>
+                    <h3>Derechos Políticos</h3>
+                    <p>Derechos de participación ciudadana</p>
+                </div>
+
+                <!-- Derechos Sociales -->
+                <div class="section-card card-red-gradient" data-section="sociales">
+                    <div class="section-header">
+                        <i data-lucide="heart" class="section-icon"></i>
+                        <i data-lucide="chevron-right" class="chevron"></i>
+                    </div>
+                    <h3>Derechos Sociales</h3>
+                    <p>Garantías sociales fundamentales</p>
+                </div>
+
+                <!-- Derechos de la Familia -->
+                <div class="section-card card-green-gradient" data-section="familia">
+                    <div class="section-header">
+                        <i data-lucide="home" class="section-icon"></i>
+                        <i data-lucide="chevron-right" class="chevron"></i>
+                    </div>
+                    <h3>Derechos de la Familia</h3>
+                    <p>Protección del núcleo familiar</p>
+                </div>
+
+                <!-- Organización del Estado -->
+                <div class="section-card card-amber-gradient" data-section="organizacion">
+                    <div class="section-header">
+                        <i data-lucide="building-2" class="section-icon"></i>
+                        <i data-lucide="chevron-right" class="chevron"></i>
+                    </div>
+                    <h3>Organización del Estado</h3>
+                    <p>Estructura del poder público</p>
+                </div>
+
+                <!-- Garantías Individuales -->
+                <div class="section-card card-indigo-gradient" data-section="garantias">
+                    <div class="section-header">
+                        <i data-lucide="shield" class="section-icon"></i>
+                        <i data-lucide="chevron-right" class="chevron"></i>
+                    </div>
+                    <h3>Garantías Individuales</h3>
+                    <p>Protección de derechos fundamentales</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detalles de Secciones (dinámico) -->
+        <div id="section-details" class="section-details"></div>
+
+        <!-- Línea Temporal -->
+        <section class="timeline-section">
+            <h2 class="section-title">Historia de Reformas</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1987</div>
+                    <div class="timeline-content">Promulgación de la Constitución original</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1995</div>
+                    <div class="timeline-content">Primera reforma constitucional</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2000</div>
+                    <div class="timeline-content">Segunda reforma constitucional</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-content">Tercera reforma constitucional</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-content">Cuarta reforma constitucional</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">Quinta reforma constitucional</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">Ley N°. 1234 - Reforma Parcial (febrero 2025)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Datos de Interés -->
+        <section class="interest-data">
+            <div class="interest-grid">
+                <div class="interest-card card-cyan-gradient">
+                    <h3>Formas de Propiedad</h3>
+                    <p class="interest-subtitle">Art. 5 sexies y Art. 10:</p>
+                    <div class="property-types">
+                        <span>Pública</span>
+                        <span>Privada</span>
+                        <span>Asociativa</span>
+                        <span>Cooperativa</span>
+                        <span>Comunitaria</span>
+                        <span>Comunal</span>
+                        <span>Familiar</span>
+                        <span>Mixta</span>
+                    </div>
+                </div>
+
+                <div class="interest-card card-rose-gradient">
+                    <h3>División Territorial</h3>
+                    <p class="interest-subtitle">Art. 161 - El territorio se divide en:</p>
+                    <ul class="territorial-list">
+                        <li><span class="bullet"></span>Departamentos</li>
+                        <li><span class="bullet"></span>Regiones Autónomas (Costa Caribe)</li>
+                        <li><span class="bullet"></span>Regímenes Especiales de Desarrollo</li>
+                        <li><span class="bullet"></span>Municipios (unidad base)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supremacía Constitucional -->
+        <section class="supremacy-section">
+            <i data-lucide="scale" class="supremacy-icon"></i>
+            <h2>Supremacía Constitucional</h2>
+            <p class="supremacy-article">Artículo 182</p>
+            <p class="supremacy-text">"La Constitución Política es la norma fundamental de la República; las demás leyes están subordinadas a ella."</p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <h3>Referencias Legales</h3>
+            <div class="footer-content">
+                <div>
+                    <p class="footer-title">Documento Base:</p>
+                    <p>Constitución Política de la República de Nicaragua</p>
+                    <p>Publicada en La Gaceta - Diario Oficial</p>
+                </div>
+                <div>
+                    <p class="footer-title">Última Reforma:</p>
+                    <p>Ley N°. 1234</p>
+                    <p>18 de febrero de 2025</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
