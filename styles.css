@@ -282,11 +282,47 @@ section {
     transition: transform 0.3s ease;
 }
 
-.section-card.active .chevron {
-    transform: rotate(90deg);
+.section-card {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.section-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.section-card:active {
+    transform: scale(0.98);
 }
 
 .card-blue-gradient {
+    background: linear-gradient(135deg, var(--blue-600), var(--blue-800));
+}
+
+.card-purple-gradient {
+    background: linear-gradient(135deg, var(--purple-600), var(--purple-800));
+}
+
+.card-red-gradient {
+    background: linear-gradient(135deg, var(--red-600), var(--red-800));
+}
+
+.card-green-gradient {
+    background: linear-gradient(135deg, var(--green-600), var(--green-800));
+}
+
+.card-amber-gradient {
+    background: linear-gradient(135deg, var(--amber-600), var(--amber-700));
+}
+
+.card-indigo-gradient {
+    background: linear-gradient(135deg, var(--indigo-600), var(--indigo-800));
+}
     background: linear-gradient(135deg, var(--blue-600), var(--blue-800));
 }
 
@@ -324,6 +360,7 @@ section {
 /* Detalles de Secciones */
 .section-details {
     margin: 2rem 1.5rem;
+    display: none;
 }
 
 .details-container {
