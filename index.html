@@ -79,62 +79,65 @@
         <!-- Secciones Principales -->
         <section class="main-sections">
             <h2 class="section-title">Estructura Constitucional</h2>
+            <p style="text-align: center; color: #bfdbfe; margin-bottom: 1rem;">
+                👆 Haz clic en cada tarjeta para ver los detalles
+            </p>
             <div class="sections-grid">
                 <!-- Principios Fundamentales -->
-                <div class="section-card card-blue-gradient" data-section="principios">
+                <div class="section-card card-blue-gradient" onclick="toggleSection('principios')">
                     <div class="section-header">
                         <i data-lucide="flag" class="section-icon"></i>
-                        <i data-lucide="chevron-right" class="chevron"></i>
+                        <i data-lucide="chevron-right" class="chevron" id="chevron-principios"></i>
                     </div>
                     <h3>Principios Fundamentales</h3>
                     <p>Fundamentos del Estado nicaragüense</p>
                 </div>
 
                 <!-- Derechos Políticos -->
-                <div class="section-card card-purple-gradient" data-section="politicos">
+                <div class="section-card card-purple-gradient" onclick="toggleSection('politicos')">
                     <div class="section-header">
                         <i data-lucide="users" class="section-icon"></i>
-                        <i data-lucide="chevron-right" class="chevron"></i>
+                        <i data-lucide="chevron-right" class="chevron" id="chevron-politicos"></i>
                     </div>
                     <h3>Derechos Políticos</h3>
                     <p>Derechos de participación ciudadana</p>
                 </div>
 
                 <!-- Derechos Sociales -->
-                <div class="section-card card-red-gradient" data-section="sociales">
+                <div class="section-card card-red-gradient" onclick="toggleSection('sociales')">
                     <div class="section-header">
                         <i data-lucide="heart" class="section-icon"></i>
-                        <i data-lucide="chevron-right" class="chevron"></i>
+                        <i data-lucide="chevron-right" class="chevron" id="chevron-sociales"></i>
                     </div>
                     <h3>Derechos Sociales</h3>
                     <p>Garantías sociales fundamentales</p>
                 </div>
 
                 <!-- Derechos de la Familia -->
-                <div class="section-card card-green-gradient" data-section="familia">
+                <div class="section-card card-green-gradient" onclick="toggleSection('familia')">
                     <div class="section-header">
                         <i data-lucide="home" class="section-icon"></i>
-                        <i data-lucide="chevron-right" class="chevron"></i>
+                        <i data-lucide="chevron-right" class="chevron" id="chevron-familia"></i>
                     </div>
                     <h3>Derechos de la Familia</h3>
                     <p>Protección del núcleo familiar</p>
                 </div>
 
                 <!-- Organización del Estado -->
-                <div class="section-card card-amber-gradient" data-section="organizacion">
+                <div class="section-card card-amber-gradient" onclick="toggleSection('organizacion')">
                     <div class="section-header">
                         <i data-lucide="building-2" class="section-icon"></i>
-                        <i data-lucide="chevron-right" class="chevron"></i>
+                        <i data-lucide="chevron-right" class="chevron" id="chevron-organizacion"></i>
                     </div>
                     <h3>Organización del Estado</h3>
                     <p>Estructura del poder público</p>
                 </div>
 
                 <!-- Garantías Individuales -->
-                <div class="section-card card-indigo-gradient" data-section="garantias">
+                <div class="section-card card-indigo-gradient" onclick="toggleSection('garantias')">
                     <div class="section-header">
                         <i data-lucide="shield" class="section-icon"></i>
-                        <i data-lucide="chevron-right" class="chevron"></i>
+                        <i data-lucide="chevron-right" class="chevron" id="chevron-garantias"></i>
                     </div>
                     <h3>Garantías Individuales</h3>
                     <p>Protección de derechos fundamentales</p>
@@ -238,16 +241,128 @@
     </div>
 
     <script>
-        // Inicializar iconos de Lucide cuando se cargue la página
-        window.addEventListener('load', () => {
+        // Datos de las secciones
+        const sectionsData = {
+            principios: {
+                title: 'Principios Fundamentales',
+                items: [
+                    { art: 'Art. 1', text: 'La independencia, soberanía y autodeterminación son derechos irrenunciables del pueblo' },
+                    { art: 'Art. 2', text: 'La soberanía nacional reside en el Pueblo que ejerce su protagonismo a través de la democracia directa' },
+                    { art: 'Art. 3', text: 'El Estado se fundamenta en valores cristianos, ideales socialistas y prácticas solidarias' },
+                    { art: 'Art. 4', text: 'La Familia es el centro de la convivencia comunitaria' },
+                    { art: 'Art. 5', text: 'El Estado reconoce a la persona, familia y comunidad como protagonistas esenciales' }
+                ]
+            },
+            politicos: {
+                title: 'Derechos Políticos',
+                items: [
+                    { art: 'Art. 43', text: 'Ciudadanía a partir de los 16 años de edad' },
+                    { art: 'Art. 44', text: 'Igualdad incondicional entre hombres y mujeres' },
+                    { art: 'Art. 47', text: 'Derecho a elegir y ser electos' },
+                    { art: 'Art. 48', text: 'Derecho de reunión, concentración y manifestación pública' },
+                    { art: 'Art. 49', text: 'Derecho a organizar o afiliarse a partidos políticos' }
+                ]
+            },
+            sociales: {
+                title: 'Derechos Sociales',
+                items: [
+                    { art: 'Art. 51', text: 'Derecho al trabajo en condiciones dignas' },
+                    { art: 'Art. 52', text: 'Educación gratuita y de calidad en todos sus niveles' },
+                    { art: 'Art. 53', text: 'Salud gratuita y de calidad - Modelo de Salud Familiar y Comunitaria' },
+                    { art: 'Art. 54', text: 'Derecho a un ambiente saludable y protección de la Madre Tierra' },
+                    { art: 'Art. 55', text: 'Derecho a la seguridad social' },
+                    { art: 'Art. 58', text: 'Derecho a una vivienda digna, cómoda y segura' }
+                ]
+            },
+            familia: {
+                title: 'Derechos de la Familia',
+                items: [
+                    { art: 'Art. 70', text: 'La familia tiene derecho a la protección del Estado' },
+                    { art: 'Art. 71', text: 'El matrimonio y la unión de hecho estable están protegidos por el Estado' },
+                    { art: 'Art. 72', text: 'Igualdad absoluta de derechos y responsabilidades entre hombre y mujer' },
+                    { art: 'Art. 73', text: 'Las relaciones familiares descansan en el respeto, solidaridad e igualdad' }
+                ]
+            },
+            organizacion: {
+                title: 'Organización del Estado',
+                items: [
+                    { art: 'Art. 117', text: 'Presidencia de la República: Jefatura de Estado y Gobierno' },
+                    { art: 'Art. 128', text: 'Asamblea Nacional: 90 diputados elegidos por 6 años' },
+                    { art: 'Art. 154', text: 'Poder Judicial: Corte Suprema de Justicia y tribunales' },
+                    { art: 'Art. 158', text: 'Consejo Supremo Electoral: organización y dirección de elecciones' },
+                    { art: 'Art. 160', text: 'Procuraduría General: defensa del Estado de Derecho' }
+                ]
+            },
+            garantias: {
+                title: 'Garantías Individuales',
+                items: [
+                    { art: 'Art. 27', text: 'Derecho a la vida, integridad física, psíquica y moral' },
+                    { art: 'Art. 32', text: 'Debido proceso y tutela judicial efectiva' },
+                    { art: 'Art. 46', text: 'Derecho a la propiedad en sus distintas modalidades' },
+                    { art: 'Art. 46 bis', text: 'Recursos de amparo, exhibición personal y hábeas data' },
+                    { art: 'Art. 69', text: 'Libertad de manifestar creencias religiosas' }
+                ]
+            }
+        };
+
+        let currentSection = null;
+
+        // Función principal para alternar secciones
+        function toggleSection(sectionId) {
+            console.log('Click en:', sectionId);
+            const detailsContainer = document.getElementById('section-details');
+            const chevron = document.getElementById('chevron-' + sectionId);
+            
+            // Si es la misma sección, cerrarla
+            if (currentSection === sectionId) {
+                detailsContainer.innerHTML = '';
+                detailsContainer.style.display = 'none';
+                chevron.style.transform = 'rotate(0deg)';
+                currentSection = null;
+                return;
+            }
+            
+            // Resetear todos los chevrons
+            document.querySelectorAll('.chevron').forEach(c => {
+                c.style.transform = 'rotate(0deg)';
+            });
+            
+            // Rotar el chevron actual
+            chevron.style.transform = 'rotate(90deg)';
+            
+            // Obtener datos
+            const data = sectionsData[sectionId];
+            
+            // Crear HTML
+            let html = '<div class="details-container"><h3>' + data.title + '</h3><div class="details-list">';
+            
+            data.items.forEach(item => {
+                html += '<div class="detail-item"><div class="detail-content">';
+                html += '<span class="article-tag">' + item.art + '</span>';
+                html += '<p class="detail-text">' + item.text + '</p>';
+                html += '</div></div>';
+            });
+            
+            html += '</div></div>';
+            
+            // Mostrar contenido
+            detailsContainer.innerHTML = html;
+            detailsContainer.style.display = 'block';
+            currentSection = sectionId;
+            
+            // Scroll suave
+            setTimeout(() => {
+                detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+        // Inicializar Lucide cuando cargue la página
+        window.addEventListener('load', function() {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
-                console.log('Iconos de Lucide inicializados');
-            } else {
-                console.error('Lucide no está cargado');
+                console.log('✅ Página cargada - Los clicks deberían funcionar');
             }
         });
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
